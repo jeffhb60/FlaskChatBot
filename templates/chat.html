@@ -71,17 +71,18 @@
       flex-direction: column;
     }
 
-.message {
-  max-width: 75%;
-  padding: 8px 16px; /* tighter vertical spacing */
-  margin: 2px 0;     /* reduce space between messages */
-  border-radius: 8px;
-  font-size: 14pt;   /* slightly smaller */
-  line-height: 1.2;
-}
-.message p {
-  margin: 0; /* override default paragraph margins */
-}
+    .message {
+      max-width: 75%;
+      padding: 8px 16px;
+      margin: 8px 2px;
+      border-radius: 8px;
+      font-size: 14pt;
+      line-height: 1.5;
+    }
+
+    .message p {
+      margin: 0;
+    }
 
     .user {
       align-self: flex-end;
@@ -95,11 +96,15 @@
       color: white;
     }
 
-    #inputForm {
-      display: flex;
-      padding: 10px;
+    #inputFormWrapper {
       background-color: #202123;
       border-top: 1px solid #444;
+      padding: 10px;
+    }
+
+    #inputForm {
+      display: flex;
+      max-width: 100%;
     }
 
     #userInput {
@@ -137,17 +142,22 @@
 <body>
   <div class="page-container">
     <div class="header">💬 Moo-Moo Chatbot</div>
+
     <div class="main-content">
       <div class="chat-section">
         <div class="chat-box" id="chatBox"></div>
-        <form id="inputForm">
-          <input type="text" id="userInput" autocomplete="off" placeholder="Type your message..." />
-          <button type="submit">Send</button>
-        </form>
       </div>
       <div class="image-section">
         <img id="sideImage" src="{{ url_for('static', filename='images/dog.png') }}" alt="Chat Image">
       </div>
+    </div>
+
+    <!-- Moved input form outside of chat-section -->
+    <div id="inputFormWrapper">
+      <form id="inputForm">
+        <input type="text" id="userInput" autocomplete="off" placeholder="Type your message..." />
+        <button type="submit">Send</button>
+      </form>
     </div>
   </div>
 

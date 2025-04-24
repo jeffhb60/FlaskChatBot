@@ -138,14 +138,18 @@
       }
 
       .page-container {
-        height: 100vh;
-        margin: 0;
-        border-radius: 0;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        height: auto;
       }
 
+
       .main-content {
-        flex-direction: column;
         flex: 1;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
       }
 
       .image-section {
@@ -159,13 +163,20 @@
       .chat-box {
         padding: 10px;
         font-size: 14px;
+          flex: 1;
+          overflow-y: auto;
+          min-height: 0;
       }
 
       #inputFormWrapper {
         position: sticky;
         bottom: 0;
-        z-index: 10;
+        background-color: #202123;
+        border-top: 1px solid #444;
+        padding: 10px;
+        z-index: 100;
       }
+
 
       #userInput {
         font-size: 14pt;

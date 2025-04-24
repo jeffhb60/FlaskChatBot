@@ -130,11 +130,53 @@
     }
 
     @media (max-width: 768px) {
+      html, body {
+        touch-action: manipulation;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .page-container {
+        height: 100vh;
+        margin: 0;
+        border-radius: 0;
+      }
+
       .main-content {
         flex-direction: column;
+        flex: 1;
       }
+
       .image-section {
         display: none;
+      }
+
+      .chat-section {
+        flex: 1;
+      }
+
+      .chat-box {
+        padding: 10px;
+        font-size: 14px;
+      }
+
+      #inputFormWrapper {
+        position: sticky;
+        bottom: 0;
+        z-index: 10;
+      }
+
+      #userInput {
+        font-size: 14pt;
+      }
+
+      #inputForm button {
+        font-size: 14pt;
+        padding: 10px 14px;
+      }
+
+      .header {
+        font-size: 20px;
+        padding: 12px;
       }
     }
   </style>

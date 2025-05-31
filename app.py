@@ -25,6 +25,7 @@ def stream():
             model="gpt-4",
             messages=messages,
             stream=True,
+            max_tokens=2000
         )
         for chunk in response:
             if chunk.choices and chunk.choices[0].delta.content:
